@@ -59,7 +59,7 @@ If you wish to have more control, you can auto bind a specific outlet:
 Under the hood
 --------------
 
-Using reflection, it's getting a list of all the outlets, which are private properties of the view-controller with OutletAttribute attribute.
+It's very easy, using reflection it's getting a list of all the outlets, which are private properties of the view-controller with OutletAttribute attribute.
 
 For each of the outlets, it's checking the type, and based on it, it's creating the MvvmCross bindings.
 
