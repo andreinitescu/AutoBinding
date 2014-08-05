@@ -37,6 +37,14 @@ In your view-controller for example, you just need to call
     
 The implementation is in the extension class in EasyBinding.Touch/Tools/AutoBinder.cs
 
+If you wish to have more control, you can auto bind a specific outlet
+
+    public override void ViewDidLoad () 
+    {
+		base.ViewDidLoad ();
+		this.AutoBind("btnLogin");
+    }
+
 
 Under the hood
 --------------
