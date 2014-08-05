@@ -35,7 +35,7 @@ In your view-controller for example, you just need to call
 		this.AutoBind();
     }
     
-The implementation is in the extension class in EasyBinding.Touch/Tools/AutoBinding.cs
+The implementation is in the extension class in EasyBinding.Touch/Tools/AutoBinder.cs
 
 
 Under the hood
