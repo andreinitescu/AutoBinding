@@ -25,7 +25,7 @@ Naming rules
 Code example
 -------------
 
-In your view-controller for example, you just need to call
+In your view-controller for example, you just need to call:
 
     using EasyBinding.Tools;
     
@@ -37,13 +37,23 @@ In your view-controller for example, you just need to call
     
 The implementation is in the extension class in EasyBinding.Touch/Tools/AutoBinder.cs
 
-If you wish to have more control, you can auto bind a specific outlet
+You can check the application output to see which auto bindings were created:
+
+	2014-08-05 15:18:33.411 EasyBindingTouch[1620:70b] mvx:Diagnostic:  0.20 Auto-bound btnLogin to LoginCommand
+	mvx:Diagnostic:  0.20 Auto-bound btnLogin to LoginCommand
+	2014-08-05 15:18:33.413 EasyBindingTouch[1620:70b] mvx:Diagnostic:  0.20 Auto-bound lblUsername to Username
+	mvx:Diagnostic:  0.20 Auto-bound lblUsername to Username
+	2014-08-05 15:18:33.423 EasyBindingTouch[1620:70b] mvx:Diagnostic:  0.21 Auto-bound txtUsername to Username
+	mvx:Diagnostic:  0.21 Auto-bound txtUsername to Username
+
+If you wish to have more control, you can auto bind a specific outlet:
 
     public override void ViewDidLoad () 
     {
 		base.ViewDidLoad ();
 		this.AutoBind("btnLogin");
     }
+
 
 
 Under the hood
