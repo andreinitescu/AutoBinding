@@ -23,7 +23,13 @@ namespace EasyBinding.Touch.Tools
 			}
 		}
 
-		public static void AutoBind<TTarget>(this TTarget target, object outlet, string outletName) where TTarget : class, IMvxBindingContextOwner
+		public static void AutoBind<TTarget>(this TTarget target, string outletName) where TTarget : class, IMvxBindingContextOwner
+		{
+			var outlet = target.GetType ().GetProperty (outletName).GetValue(target);
+			target.AutoBind<TTarget> (outlet, outletName);
+		}
+
+		static void AutoBind<TTarget>(this TTarget target, object outlet, string outletName) where TTarget : class, IMvxBindingContextOwner
 		{
 			var viewModel = target.BindingContext.DataContext;
 			//var vmProperties = viewModel.GetType ().GetProperties ().ToList();
