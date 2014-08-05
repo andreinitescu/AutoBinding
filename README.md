@@ -27,13 +27,16 @@ Code example
 
 In your view-controller for example, you just need to call
 
-
+    using EasyBinding.Tools;
+    
     public override void ViewDidLoad () 
     {
 		base.ViewDidLoad ();
 		this.AutoBind();
     }
     
+The implementation is in the extension class in EasyBinding.Touch/Tools/AutoBinding.cs
+
 
 Under the hood
 --------------
@@ -41,6 +44,4 @@ Under the hood
 Using reflection, it's getting a list of all the outlets, which are private properties of the view-controller with OutletAttribute attribute.
 
 For each of the outlets, it's checking the type, and based on it, it's creating the MvvmCross bindings.
-
-
 
